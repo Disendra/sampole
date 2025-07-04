@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery Challan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./forms.css" />
+</head>
+
+<body>
+    <div class="form-wrapper delivery-challan">
+        <form class="form-wrapper-container">
+            <div class="form-content">
+                <div class="form-switcher">
+                    <ul class="list-unstyled form-switcher-list">
+                        <li>
+                            <a href="#" class="form-switcher-link active"> Form </a>
+                        </li>
+                        <li>
+                            <a href="#" class="form-switcher-link"> Preview </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-section">
+                    <div class="form-heading">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-package h-5 w-5 text-blue-600">
+                            <path
+                                d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
+                            </path>
+                            <path d="M12 22V12"></path>
+                            <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path>
+                            <path d="m7.5 4.27 9 5.15"></path>
+                        </svg>
+                        Delivery Challan
+                    </div>
+                    <div class="form-cards">
+                        <div class="form-card | form-company-information">
+                            <h4 class="form-card-heading">Company Information</h4>
+                            <div class="form-fields">
+                                <div class="form-fields-container">
+                                    <div class="form-group">
+                                        <label for="companyName">Company Name <span class="text-danger">*</span></label>
+                                        <input type="text" id="companyName" placeholder="Enter company name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="companyAddress">Address <span class="text-danger">*</span></label>
+                                        <input type="text" id="companyAddress" placeholder="Enter company address" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="companyPhoneNo">Phone No <span class="text-danger">*</span></label>
+                                        <input type="tel" id="companyPhoneNo" placeholder="Enter phone number" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="companyEmail">Email<span class="text-danger">*</span></label>
+                                        <input type="email" id="companyEmail" placeholder="Enter email address" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="companyGstin">GSTIN<span class="text-danger">*</span></label>
+                                        <input type="text" id="companyGstin" placeholder="Enter GSTIN number" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="challanNumber">Challan Number<span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="challanNumber" placeholder="Enter challan number" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-card | form-gate-pass-information">
+                            <h4>Shipping to</h4>
+                            <div class="form-fields">
+                                <div class="form-fields-container">
+                                    <div class="form-group">
+                                        <label for="shippingName">Shipping Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="shippingName" placeholder="Enter recipient number" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contactPersonName">Contact Person <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="contactPersonName"
+                                            placeholder="Enter contact person name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="shippingAddress">Address <span class="text-danger">*</span></label>
+                                        <textarea type="text" placeholder="Enter shipping address" rows="5"
+                                            id="shippingAddress" style="resize: vertical;"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="shippingPhoneNo">Phone No<span class="text-danger">*</span></label>
+                                        <input type="tel" id="shippingPhoneNo" placeholder="Enter phone number" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="shippingGstin">GSTIN</label>
+                                        <input type="text" id="shippingGstin" placeholder="Enter GSTIN number" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-table">
+                            <h4>Item Details</h4>
+                            <div class="form-table-header">
+                                <div class="table-cell-first | table-header-cell">
+                                    Item Name
+                                </div>
+                                <div class="table-cell-second | table-header-cell">
+                                    HSN/SAC Code
+                                </div>
+                                <div class="table-cell-third | table-header-cell">
+                                    QTY
+                                </div>
+                                <div class="table-cell-fourth | table-header-cell">
+                                    Units
+                                </div>
+                                <div class="table-cell-action | table-header-cell"></div>
+                            </div>
+                            <!-- Table rows will be added here -->
+                            <div id="formTableRows"></div>
+
+                            <button id="addEntryBtn" type="button" class="form-button form-button-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-plus h-4 w-4 mr-2 icon">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5v14"></path>
+                                </svg>
+                                Add Material
+                            </button>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-card | form-authorization">
+                            <h4 class="form-card-heading">Signature & Authorization</h4>
+                            <div class="form-fields">
+                                <div class="form-fields-container">
+
+                                    <!-- Prepared By -->
+                                    <div class="form-group">
+                                        <label>Prepared By</label>
+                                        <div class="signature-wrapper">
+                                            <canvas id="signaturePadPrepared-challan"></canvas>
+                                            <button type="button" class="clear-btn"
+                                                id="clearSignaturePrepared">Clear</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Received By -->
+                                    <div class="form-received-by">
+                                        <div class="form-group">
+                                            <label>Received By</label>
+                                            <div class="signature-wrapper">
+                                                <canvas id="signaturePadReceived-challan"></canvas>
+                                                <button type="button" class="clear-btn"
+                                                    id="clearSignatureReceived">Clear</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="line"></div>
+
+                        <div class="form-buttons">
+                            <button id="previewReportBtn" class="form-button form-button-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-file-text h-4 w-4 icon">
+                                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                    <path d="M10 9H8"></path>
+                                    <path d="M16 13H8"></path>
+                                    <path d="M16 17H8"></path>
+                                </svg>
+                                Preview Report
+                            </button>
+                            <button class="form-button form-button-primary" data-action="print-report">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-download h-4 w-4 mr-2 icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" x2="12" y1="15" y2="3"></line>
+                                </svg>
+                                Print Report
+                            </button>
+                        </div>
+                        <a href="./print-material-gate-pass-form.html"></a>
+                    </div>
+                </div>
+
+                <div class="form-preview">
+                    <div class="form-preview-heading">
+                        <h3>Delivery Challan Preview</h3>
+                        <p>Review your challan before printing</p>
+                    </div>
+                    <div class="form-preview-cards">
+                        <div class="form-preview-card">
+                            <h4>Company Information</h4>
+                            <div class="form-preview-card-content">
+                                <div>
+                                    <strong>Company Name:</strong>
+                                    <span id="previewCompanyName"></span>
+                                </div>
+                                <div>
+                                    <strong>Challan No: </strong>
+                                    <span id="previewChallanNumber"></span>
+                                </div>
+                                <div>
+                                    <strong>Phone No:</strong>
+                                    <span id="previewCompanyPhoneNo"></span>
+                                </div>
+                                <div>
+                                    <strong>Email ID:</strong>
+                                    <span id="previewCompanyEmail"></span>
+                                </div>
+                                <div>
+                                    <strong>GSTIN:</strong>
+                                    <span id="previewCompanyGstin"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-preview-card">
+                            <h4>Shipping Information</h4>
+                            <div class="form-preview-card-content">
+                                <div>
+                                    <strong>Shipping Name:</strong>
+                                    <span id="previewShippingName"></span>
+                                </div>
+                                <div>
+                                    <strong>Contact Person:</strong>
+                                    <span id="previewContactPersonName"></span>
+                                </div>
+                                <div>
+                                    <strong>Phone No:</strong>
+                                    <span id="previewShippingPhoneNo"></span>
+                                </div>
+                                <div>
+                                    <strong>GSTIN:</strong>
+                                    <span id="previewShippingGstin"></span>
+                                </div>
+                                <div>
+                                    <strong>Address:</strong>
+                                    <span id="previewShippingAddress"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-preview-card">
+                            <h4>Materials</h4>
+                            <div class="preview-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="text-left">Item Name</th>
+                                            <th class="text-left">HSN/SAC Code</th>
+                                            <th class="text-center">QTY</th>
+                                            <th class="text-left">Units</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="previewMaterialTable">
+                                        <tr>
+                                            <td class="text-left">-</td>
+                                            <td class="text-left">-</td>
+                                            <td class="text-center">-</td>
+                                            <td class="text-left">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="form-preview-buttons">
+                            <button type="button" id="backToFormBtn" class="form-button form-button-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-arrow-left-icon lucide-arrow-left icon">
+                                    <path d="m12 19-7-7 7-7" />
+                                    <path d="M19 12H5" />
+                                </svg>
+                                Back to Form
+                            </button>
+                            <button type="button" class="form-button form-button-primary" data-action="print-report">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-download h-4 w-4 icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" x2="12" y1="15" y2="3"></line>
+                                </svg>
+                                Print Gate Pass
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.5/dist/signature_pad.umd.min.js"></script>
+
+    <script>
+        let preparedPad, receivedPad;
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const data = JSON.parse(localStorage.getItem("deliveryChallanData") || "{}");
+
+            const previewFields = [
+                { input: 'companyName', preview: 'previewCompanyName' },
+                { input: 'companyPhoneNo', preview: 'previewCompanyPhoneNo' },
+                { input: 'companyEmail', preview: 'previewCompanyEmail' },
+                { input: 'companyGstin', preview: 'previewCompanyGstin' },
+                { input: 'challanNumber', preview: 'previewChallanNumber' },
+                { input: 'shippingName', preview: 'previewShippingName' },
+                { input: 'contactPersonName', preview: 'previewContactPersonName' },
+                { input: 'shippingPhoneNo', preview: 'previewShippingPhoneNo' },
+                { input: 'shippingGstin', preview: 'previewShippingGstin' },
+                { input: 'shippingAddress', preview: 'previewShippingAddress' }
+            ];
+
+            const tableRowsContainer = document.getElementById("formTableRows");
+
+            // Populate Fields
+            previewFields.forEach(({ input, preview }) => {
+                const inputEl = document.getElementById(input);
+                const previewEl = document.getElementById(preview);
+                const value = data[input] || "";
+
+                if (inputEl) inputEl.value = value;
+                if (previewEl) previewEl.textContent = value || "not specified";
+
+                if (inputEl && previewEl) {
+                    inputEl.addEventListener("input", () => {
+                        previewEl.textContent = inputEl.value.trim() || "not specified";
+                    });
+                }
+            });
+
+            // Populate Material Rows
+            tableRowsContainer.innerHTML = "";
+            if (Array.isArray(data.materials) && data.materials.length > 0) {
+                data.materials.forEach(row => {
+                    const newRow = createTableRow();
+                    newRow.querySelector(".item-name").value = row.itemName || "";
+                    newRow.querySelector(".hsn-code").value = row.hsn || "";
+                    newRow.querySelector(".qty").value = row.qty || "";
+                    newRow.querySelector(".units").value = row.units || "";
+                    tableRowsContainer.appendChild(newRow);
+                });
+            } else {
+                for (let i = 0; i < 3; i++) {
+                    tableRowsContainer.appendChild(createTableRow());
+                }
+            }
+
+            // Signature Pad Setup
+            const preparedCanvas = document.getElementById('signaturePadPrepared-challan');
+            const receivedCanvas = document.getElementById('signaturePadReceived-challan');
+
+            if (preparedCanvas && receivedCanvas) {
+                const resizeCanvas = (canvas) => {
+                    const ratio = Math.max(window.devicePixelRatio || 1, 1);
+                    canvas.width = canvas.offsetWidth * ratio;
+                    canvas.height = canvas.offsetHeight * ratio;
+                    canvas.getContext("2d").scale(ratio, ratio);
+                };
+
+                resizeCanvas(preparedCanvas);
+                resizeCanvas(receivedCanvas);
+
+                preparedPad = new SignaturePad(preparedCanvas);
+                receivedPad = new SignaturePad(receivedCanvas);
+
+                if (data.signaturePrepared) preparedPad.fromDataURL(data.signaturePrepared);
+                if (data.signatureReceived) receivedPad.fromDataURL(data.signatureReceived);
+
+                document.getElementById("clearSignaturePrepared")?.addEventListener("click", () => preparedPad.clear());
+                document.getElementById("clearSignatureReceived")?.addEventListener("click", () => receivedPad.clear());
+            }
+
+            function updateTextPreviews() {
+                previewFields.forEach(({ input, preview }) => {
+                    const el = document.getElementById(input);
+                    const previewEl = document.getElementById(preview);
+                    if (previewEl) previewEl.textContent = el?.value.trim() || 'not specified';
+                });
+            }
+
+            function updateMaterialPreview() {
+                const previewTable = document.getElementById("previewMaterialTable");
+                previewTable.innerHTML = "";
+
+                const rows = document.querySelectorAll(".form-table-row");
+                let hasData = false;
+
+                rows.forEach(row => {
+                    const item = row.querySelector(".item-name")?.value.trim();
+                    const hsn = row.querySelector(".hsn-code")?.value.trim();
+                    const qty = row.querySelector(".qty")?.value.trim();
+                    const unit = row.querySelector(".units")?.value.trim();
+
+                    if (item || hsn || qty || unit) {
+                        const tr = document.createElement("tr");
+                        tr.innerHTML = `
+            <td class="text-left">${item || "-"}</td>
+            <td class="text-left">${hsn || "-"}</td>
+            <td class="text-center">${qty || "-"}</td>
+            <td class="text-left">${unit || "-"}</td>
+          `;
+                        previewTable.appendChild(tr);
+                        hasData = true;
+                    }
+                });
+
+                if (!hasData) {
+                    previewTable.innerHTML = `<tr><td colspan="4" class="text-center">-</td></tr>`;
+                }
+            }
+
+            function createTableRow() {
+                const row = document.createElement("div");
+                row.classList.add("form-table-row");
+                row.innerHTML = `
+        <div class="table-cell-first table-cell">
+          <input class="item-name" type="text" placeholder="Item Name">
+        </div>
+        <div class="table-cell-second table-cell">
+          <input class="hsn-code" type="text" placeholder="HSN/SAC Code">
+        </div>
+        <div class="table-cell-third table-cell">
+          <input class="qty" type="text" placeholder="Quantity">
+        </div>
+        <div class="table-cell-fourth table-cell">
+          <input class="units" type="text" placeholder="Units">
+        </div>
+        <div class="table-cell-action table-cell">
+          <button class="delete-table-row" onclick="this.closest('.form-table-row').remove()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+              class="lucide lucide-trash2 h-4 w-4">
+              <path d="M3 6h18"></path>
+              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+              <line x1="10" x2="10" y1="11" y2="17"></line>
+              <line x1="14" x2="14" y1="11" y2="17"></line>
+            </svg>
+          </button>
+        </div>
+      `;
+                return row;
+            }
+
+            // Event Listeners
+            document.getElementById("addEntryBtn")?.addEventListener("click", () => {
+                tableRowsContainer.appendChild(createTableRow());
+            });
+
+            document.querySelectorAll(".form-switcher-link").forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const isForm = link.textContent.trim().toLowerCase() === "form";
+
+                    document.querySelector(".form-section").style.display = isForm ? "block" : "none";
+                    document.querySelector(".form-preview").style.display = isForm ? "none" : "block";
+
+                    document.querySelectorAll(".form-switcher-link").forEach(l => l.classList.remove("active"));
+                    link.classList.add("active");
+
+                    if (!isForm) {
+                        updateTextPreviews();
+                        updateMaterialPreview();
+                    }
+                });
+            });
+
+            document.getElementById("previewReportBtn")?.addEventListener("click", e => {
+                e.preventDefault();
+                updateTextPreviews();
+                updateMaterialPreview();
+                document.querySelector(".form-section").style.display = "none";
+                document.querySelector(".form-preview").style.display = "block";
+                document.querySelectorAll(".form-switcher-link").forEach(l => l.classList.remove("active"));
+                document.querySelectorAll(".form-switcher-link")[1]?.classList.add("active");
+            });
+
+            document.getElementById("backToFormBtn")?.addEventListener("click", e => {
+                e.preventDefault();
+                document.querySelector(".form-section").style.display = "block";
+                document.querySelector(".form-preview").style.display = "none";
+                document.querySelectorAll(".form-switcher-link").forEach(l => l.classList.remove("active"));
+                document.querySelectorAll(".form-switcher-link")[0]?.classList.add("active");
+            });
+
+            document.querySelectorAll('[data-action="print-report"]').forEach(btn => {
+                btn.addEventListener("click", e => {
+                    e.preventDefault();
+
+                    const payload = {};
+                    previewFields.forEach(({ input }) => {
+                        const el = document.getElementById(input);
+                        payload[input] = el ? el.value.trim() : "";
+                    });
+
+                    const materials = [];
+                    document.querySelectorAll(".form-table-row").forEach(row => {
+                        const item = row.querySelector(".item-name")?.value.trim();
+                        const hsn = row.querySelector(".hsn-code")?.value.trim();
+                        const qty = row.querySelector(".qty")?.value.trim();
+                        const unit = row.querySelector(".units")?.value.trim();
+                        if (item || hsn || qty || unit) {
+                            materials.push({ itemName: item, hsn, qty, units: unit });
+                        }
+                    });
+
+                    payload.materials = materials;
+                    payload.signaturePrepared = preparedPad?.toDataURL() || "";
+                    payload.signatureReceived = receivedPad?.toDataURL() || "";
+
+                    localStorage.setItem("deliveryChallanData", JSON.stringify(payload));
+                    window.location.href = "./print-delivery-challan.html";
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
