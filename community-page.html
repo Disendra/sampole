@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./community-page.css" />
+</head>
+
+<body>
+  <div class="community-page-section">
+    <div class="left-side">
+      <div class="community-card">
+        <div class="community-card-logo">
+          <img src="images/logo-black.png" alt="" />
+        </div>
+        <div class="community-card-info">
+          <h1>Discussions</h1>
+          <span>Share your thoughts, ask questions, and get help from the
+            community</span>
+        </div>
+      </div>
+      <div class="community-section">
+        <div class="community-section-left">
+          <div class="community-section-card | community-categories">
+            <h3>Categories</h3>
+            <ul class="list-unstyled category-list">
+              <li>
+                <a href="#" class="category-link active">All Categories</a>
+              </li>
+              <li><a href="#" class="category-link">Announcements</a></li>
+              <li><a href="#" class="category-link">Events</a></li>
+              <li><a href="#" class="category-link">Feedback</a></li>
+              <li><a href="#" class="category-link">General</a></li>
+              <li><a href="#" class="category-link">Jobs</a></li>
+              <li><a href="#" class="category-link">Questions</a></li>
+              <li><a href="#" class="category-link">Resources</a></li>
+              <li><a href="#" class="category-link">Technical</a></li>
+            </ul>
+          </div>
+
+          <div class="community-section-card | community-my-activity">
+            <h3>My Activity</h3>
+            <ul class="list-unstyled category-list">
+              <li><a href="#" class="category-link">My Posts</a></li>
+              <li><a href="#" class="category-link">Saved</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="community-section-right">
+          <form class="community-form | community-section-card collapsed">
+            <div class="community-form-header">
+              <div class="community-form-avatar">UN</div>
+              <div class="community-form-inputs">
+                <input type="text" class="form-control" placeholder="Subject " id="discussionTextarea" />
+                <textarea class="form-control auto-expand" placeholder="Start a discussion..." rows="1"></textarea>
+              </div>
+            </div>
+
+            <div class="form-expanded-content">
+
+              <div class="community-form-category">
+                <label class="form-label">Category</label>
+                <select class="form-select">
+                  <option>Announcements</option>
+                  <option>Events</option>
+                  <option>Feedback</option>
+                  <option>General</option>
+                  <option>Jobs</option>
+                  <option>Questions</option>
+                  <option>Resources</option>
+                  <option>Technical</option>
+                </select>
+              </div>
+              <div class="community-form-tags">
+                <label class="form-label">Tags</label>
+                <div class="tag-badges">
+                  <div class="tag-badge">
+                    This
+                    <div class="tag-badge-icon">×</div>
+                  </div>
+                  <div class="tag-badge">
+                    That
+                    <div class="tag-badge-icon">×</div>
+                  </div>
+                  <div class="tag-badge">
+                    These
+                    <div class="tag-badge-icon">×</div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-center gap-2 mt-2 ">
+                  <input type="text" class="form-control" placeholder="Type a tag and press Enter" />
+                  <div class="community-button community-button-primary">
+                    Add
+                  </div>
+                </div>
+              </div>
+              <div class="community-form-poll" id="pollSection" style="display: none">
+                <h4>Create Poll</h4>
+                <div class="poll-options" id="pollOptionsContainer">
+                  <div class="poll-option">
+                    <button type="button" class="poll-option-emoji">👍</button>
+                    <input type="text" class="form-control" placeholder="Option 1" />
+                  </div>
+                  <div class="poll-option">
+                    <button type="button" class="poll-option-emoji">👎</button>
+                    <input type="text" class="form-control" placeholder="Option 2" />
+                  </div>
+                </div>
+                <div class="community-add-option mt-2">
+                  <button class="community-button" id="addOptionBtn" type="button">
+                    Add Option
+                  </button>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" checked />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Allow multiple selections
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- File/Image Previews -->
+              <div class="file-previews">
+                <div id="image-preview" class="file-preview"></div>
+                <div id="file-preview" class="file-preview"></div>
+              </div>
+
+              <!-- Hidden File Inputs -->
+              <input type="file" id="imageInput" accept="image/*" style="display: none" />
+              <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.ppt,.pptx" style="display: none" />
+              <div class="community-form-submit">
+                <div class="form-buttons">
+                  <button class="community-button community-button-secondary" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-image h-4 w-4 mr-2 icon">
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                      <circle cx="9" cy="9" r="2"></circle>
+                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                    </svg>
+                    Image
+                  </button>
+                  <button class="community-button community-button-secondary" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-paperclip h-4 w-4 mr-2 icon">
+                      <path
+                        d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48">
+                      </path>
+                    </svg>
+                    Attachment
+                  </button>
+                  <button class="community-button community-button-secondary form-toggle-btn" type="button"
+                    id="togglePollBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-message-square h-4 w-4 mr-2 icon">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Poll
+                  </button>
+                  <button class="community-button community-button-secondary form-toggle-btn" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-tag h-4 w-4 mr-2 icon">
+                      <path
+                        d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z">
+                      </path>
+                      <circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                    </svg>
+                    Tags
+                  </button>
+                </div>
+                <div class="form-post-button">
+                  <button class="community-button community-button-primary" type="submit" disabled>
+                    Post
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+          <div class="community-search-section | community-section-card">
+            <div class="community-search input-group overflow-hidden border">
+              <span class="input-group-text bg-white border-0 ps-2.5">
+                <i class="bi bi-search icon"></i>
+              </span>
+              <input type="text" class="form-control border-0 ps-0" placeholder="Search for AV equipment" />
+            </div>
+            <select class="form-select">
+              <option value="" disabled selected hidden>Sort By</option>
+              <option>All Topics</option>
+              <option>Trending</option>
+              <option>Newest</option>
+              <option>Oldest</option>
+            </select>
+          </div>
+
+          <div class="community-overview">
+            <h2>Discussions</h2>
+            <div class="d-flex align-items-center justify-content-center gap-2">
+              <p class="community-total-text">3 Total</p>
+              <div class="community-badge community-pinned-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-pin w-3 h-3 mr-1 icon">
+                  <path d="M12 17v5"></path>
+                  <path
+                    d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z">
+                  </path>
+                </svg>
+                1 pinned
+              </div>
+              <div class="community-badge community-locked-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-lock w-3 h-3 mr-1 icon">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                1 locked
+              </div>
+            </div>
+          </div>
+
+          <div class="community-view-switcher">
+            <ul class="list-unstyled view-switcher-list">
+              <li>
+                <a href="#" class="view-switcher-link active">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-message-square w-3 h-3 icon">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  All
+                </a>
+              </li>
+              <li>
+                <a href="#" class="view-switcher-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-pin w-3 h-3 icon">
+                    <path d="M12 17v5"></path>
+                    <path
+                      d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z">
+                    </path>
+                  </svg>
+                  Pinned
+                  <div class="count">1</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="view-switcher-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-clock w-3 h-3 icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  Recent
+                </a>
+              </li>
+              <li>
+                <a href="#" class="view-switcher-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-lock w-3 h-3 icon">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  Locked
+
+                  <div class="count">1</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="community-posts">
+            <div class="community-post community-post-locked | community-section-card">
+              <div class="post-meta">
+                <div class="post-avatar">
+                  <img src="./images/05_Image.jpg" alt="Abhiram Kanna" />
+                </div>
+                <div class="post-details">
+                  <div class="post-author">
+                    <h3 class="author-name">Abhiram Kanna</h3>
+                    <div class="post-meta-badges">
+                      <div class="community-badge community-pinned-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-pin w-3 h-3 mr-1 icon">
+                          <path d="M12 17v5"></path>
+                          <path
+                            d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z">
+                          </path>
+                        </svg>
+                        1 pinned
+                      </div>
+                      <div class="community-badge community-locked-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-lock w-3 h-3 mr-1 icon">
+                          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        1 locked
+                      </div>
+                    </div>
+                  </div>
+                  <p>5 days ago</p>
+                </div>
+              </div>
+              <div class="post-content">
+                <h2>New age AV boon or bane</h2>
+                <p class="post-description">
+                  New age AV products don't seem to be popularized so much, I
+                  feel they could get a lot more exposure, but what does the
+                  market say? Is new age AV communication evolving fast enough
+                  to meet current demands, or are we still catching up?
+                </p>
+              </div>
+              <div class="post-tags">
+                <div class="post-tag">#boonorbane</div>
+                <div class="post-tag">#boonorbane</div>
+              </div>
+              <div class="post-footer">
+                <div class="post-buttons">
+                  <button class="post-button post-comment-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-message-square h-4 w-4 mr-1 icon">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    1
+                  </button>
+                  <button class="post-button post-like-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-heart h-4 w-4 mr-1 icon">
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                      </path>
+                    </svg>
+                    0
+                  </button>
+                  <p class="post-view">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-eye h-4 w-4 mr-1 icon">
+                      <path
+                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                      </path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    5
+                  </p>
+                </div>
+                <!-- <div class="post-new">New</div> -->
+              </div>
+            </div>
+            <div class="community-post | community-section-card">
+              <div class="post-meta">
+                <div class="post-avatar">
+                  <img src="./images/05_Image.jpg" alt="Abhiram Kanna" />
+                </div>
+                <div class="post-details">
+                  <div class="post-author">
+                    <h3 class="author-name">Abhiram Kanna</h3>
+                  </div>
+                  <p>5 days ago</p>
+                </div>
+              </div>
+              <div class="post-content">
+                <h2>New age AV boon or bane</h2>
+                <p class="post-description">
+                  New age AV products don't seem to be popularized so much, I
+                  feel they could get a lot more exposure, but what does the
+                  market say? Is new age AV communication evolving fast enough
+                  to meet current demands, or are we still catching up?
+                </p>
+              </div>
+              <div class="post-poll">
+                <h4>What about Av Tools</h4>
+                <div class="post-poll-options">
+                  <div class="post-poll-option">
+                    <span>👍</span>
+                    <span class="post-poll-option-heading">Option 1</span>
+                    <span class="post-poll-option-votes">(23 votes)</span>
+                  </div>
+                  <div class="post-poll-option">
+                    <span>👎</span>
+                    <span class="post-poll-option-heading">Option 2</span>
+                    <span class="post-poll-option-votes">(3 votes)</span>
+                  </div>
+                  <div class="post-poll-option">
+                    <span>🔍</span>
+                    <span class="post-poll-option-heading">Option 3</span>
+                    <span class="post-poll-option-votes">(200 votes)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="post-tags">
+                <div class="post-tag">#boonorbane</div>
+                <div class="post-tag">#boonorbane</div>
+              </div>
+              <div class="post-footer">
+                <div class="post-buttons">
+                  <button class="post-button post-comment-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-message-square h-4 w-4 mr-1 icon">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    1
+                  </button>
+                  <button class="post-button post-like-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-heart h-4 w-4 mr-1 icon">
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                      </path>
+                    </svg>
+                    0
+                  </button>
+                  <p class="post-view">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-eye h-4 w-4 mr-1 icon">
+                      <path
+                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                      </path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    5
+                  </p>
+                </div>
+                <div class="post-new">New</div>
+              </div>
+            </div>
+            <div class="community-post | community-section-card">
+              <div class="post-meta">
+                <div class="post-avatar">
+                  <img src="./images/05_Image.jpg" alt="Abhiram Kanna" />
+                </div>
+                <div class="post-details">
+                  <div class="post-author">
+                    <h3 class="author-name">Abhiram Kanna</h3>
+                  </div>
+                  <p>5 days ago</p>
+                </div>
+              </div>
+              <div class="post-content">
+                <h2>New age AV boon or bane</h2>
+                <p class="post-description">
+                  New age AV products don't seem to be popularized so much, I
+                  feel they could get a lot more exposure, but what does the
+                  market say? Is new age AV communication evolving fast enough
+                  to meet current demands, or are we still catching up?
+                </p>
+              </div>
+              <div class="post-tags">
+                <div class="post-tag">#boonorbane</div>
+                <div class="post-tag">#boonorbane</div>
+              </div>
+              <div class="post-footer">
+                <div class="post-buttons">
+                  <button class="post-button post-comment-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-message-square h-4 w-4 mr-1 icon">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    1
+                  </button>
+                  <button class="post-button post-like-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-heart h-4 w-4 mr-1 icon">
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                      </path>
+                    </svg>
+                    0
+                  </button>
+                  <p class="post-view">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-eye h-4 w-4 mr-1 icon">
+                      <path
+                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                      </path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    5
+                  </p>
+                </div>
+                <div class="post-new">New</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="no-post-section">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-message-square w-12 h-12 text-muted-foreground mx-auto mb-4 icon">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <h3>No discussions found</h3>
+            <p>No recent discussions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="ad-card">
+        <div class="ad-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-badge-info h-4 w-4 mr-2">
+            <path
+              d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z">
+            </path>
+            <line x1="12" x2="12" y1="16" y2="12"></line>
+            <line x1="12" x2="12.01" y1="8" y2="8"></line>
+          </svg>
+          Sponsored Content
+        </div>
+        <div class="ad-image">
+          <img src="https://via.placeholder.com/240x150?text=Sample+Ad+1" alt="Sample Ad" />
+          <div class="ad-label">Advertisement</div>
+        </div>
+        <div class="ad-body">
+          <h5>Sample Ad 1</h5>
+          <p>This is a sample advertisement.</p>
+          <button class="btn learn-more-btn mx-auto">Learn More</button>
+        </div>
+        <div class="ad-footer">
+          Google Ad Slot <br />
+          <small>Advertisement · <a href="#">Report this ad</a></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // =================== POLL TOGGLE ===================
+  const pollToggleBtn = document.getElementById("togglePollBtn");
+  const pollSection = document.getElementById("pollSection");
+
+  if (pollToggleBtn && pollSection) {
+    pollToggleBtn.addEventListener("click", () => {
+      const isHidden = pollSection.style.display === "none";
+      pollSection.style.display = isHidden ? "block" : "none";
+    });
+  }
+
+  // =================== CATEGORY TOGGLE ===================
+  document.querySelectorAll(".community-section-card").forEach((section) => {
+    const links = section.querySelectorAll(".category-link");
+
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        links.forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+  });
+
+  // =================== TEXTAREA AUTO RESIZE ===================
+  document.querySelectorAll(".auto-expand").forEach((textarea) => {
+    textarea.addEventListener("input", () => {
+      textarea.style.height = "auto";
+      textarea.style.height = textarea.scrollHeight + "px";
+    });
+  });
+
+  // =================== TOGGLE FORM CONTENT ===================
+  const form = document.querySelector('.community-form');
+  const subjectInput = document.getElementById('discussionTextarea');
+  const textarea = form.querySelector('textarea');
+  textarea.style.display = 'none';
+
+  subjectInput.addEventListener('focus', () => {
+    form.classList.remove('collapsed');
+    textarea.style.display = 'block';
+  });
+
+  document.addEventListener('click', (e) => {
+    const isClickInsideForm = form.contains(e.target);
+    const isIgnored = e.target.closest('[data-ignore-collapse]'); // new line
+    if (!isClickInsideForm && !isIgnored) {
+      form.classList.add('collapsed');
+      textarea.style.display = 'none';
+    }
+  });
+
+  // =================== ADD POLL OPTION ===================
+  const addOptionBtn = document.getElementById("addOptionBtn");
+  const pollOptionsContainer = document.getElementById("pollOptionsContainer");
+  let currentOptions = 2;
+  const maxOptions = 10;
+
+  if (addOptionBtn && pollOptionsContainer) {
+    addOptionBtn.addEventListener("click", () => {
+      if (currentOptions >= maxOptions) return;
+
+      const newOption = document.createElement("div");
+      newOption.className = "poll-option-new mt-2 d-flex align-items-center gap-2";
+      newOption.innerHTML = `
+        <button type="button" class="poll-option-emoji">🔍</button>
+        <input type="text" class="form-control" placeholder="Option ${currentOptions + 1}" />
+        <div class="poll-remove" role="button" style="cursor: pointer;" data-ignore-collapse>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </div>
+      `;
+
+      pollOptionsContainer.appendChild(newOption);
+      currentOptions++;
+
+      if (currentOptions >= maxOptions) {
+        addOptionBtn.disabled = true;
+        addOptionBtn.innerText = "Max Options Reached";
+      }
+    });
+
+    pollOptionsContainer.addEventListener("click", (e) => {
+      if (e.target.closest(".poll-remove")) {
+        const option = e.target.closest(".poll-option-new");
+        option.remove();
+        currentOptions--;
+
+        if (currentOptions < maxOptions) {
+          addOptionBtn.disabled = false;
+          addOptionBtn.innerText = "Add Option";
+        }
+      }
+    });
+  }
+
+  // ================= FORM BUTTONS ACTIVE STATE ==================
+  const toggleButtons = document.querySelectorAll('.form-toggle-btn');
+
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      button.classList.toggle('active');
+    });
+  });
+
+  // =================== VIEW SWITCHER ACTIVE ===================
+  document.querySelectorAll(".view-switcher-link").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelectorAll(".view-switcher-link").forEach((l) => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+
+  // =================== POST DESCRIPTION TRUNCATE ===================
+  const maxChars = 150;
+  document.querySelectorAll(".post-description").forEach((desc) => {
+    const text = desc.textContent.trim();
+    if (text.length > maxChars) {
+      desc.textContent = text.slice(0, maxChars) + "...";
+    }
+  });
+
+  // =================== IMAGE PREVIEW ===================
+  const imageInput = document.getElementById("imageInput");
+  const imagePreview = document.getElementById("image-preview");
+  const imageBtn = document.querySelector("svg.lucide-image")?.closest("button");
+
+  // =================== FILE PREVIEW ===================
+  const fileInput = document.getElementById("fileInput");
+  const filePreview = document.getElementById("file-preview");
+  const fileBtn = document.querySelector("svg.lucide-paperclip")?.closest("button");
+  const filePreviewsWrapper = document.querySelector(".file-previews");
+
+  function showFilePreviews() {
+    if (filePreviewsWrapper) {
+      filePreviewsWrapper.style.display = "flex";
+    }
+  }
+
+  // IMAGE HANDLER
+  if (imageBtn && imageInput) {
+    imageBtn.addEventListener("click", () => imageInput.click());
+
+    imageInput.addEventListener("change", () => {
+      imagePreview.innerHTML = "";
+      const file = imageInput.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("file-image-wrapper");
+        wrapper.innerHTML = `
+          <img src="${reader.result}" alt="Preview" />
+          <button class="delete-btn" type="button" >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              viewBox="0 0 24 24">
+              <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+              <line x1="10" x2="10" y1="11" y2="17"/>
+              <line x1="14" x2="14" y1="11" y2="17"/>
+            </svg>
+          </button>
+        `;
+        imagePreview.appendChild(wrapper);
+        showFilePreviews();
+
+        wrapper.querySelector(".delete-btn").addEventListener("click", () => {
+          imagePreview.innerHTML = "";
+          imageInput.value = "";
+          if (!filePreview.innerHTML.trim()) filePreviewsWrapper.style.display = "none";
+        });
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // FILE HANDLER
+  if (fileBtn && fileInput) {
+    fileBtn.addEventListener("click", () => fileInput.click());
+
+    fileInput.addEventListener("change", () => {
+      filePreview.innerHTML = "";
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("file-box");
+      wrapper.innerHTML = `
+        <div>
+          <p class="file-name">${file.name}</p>
+          <p class="file-size">${(file.size / 1024).toFixed(2)} KB</p>
+        </div>
+        <button class="delete-btn" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            viewBox="0 0 24 24">
+            <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+            <line x1="10" x2="10" y1="11" y2="17"/>
+            <line x1="14" x2="14" y1="11" y2="17"/>
+          </svg>
+        </button>
+      `;
+      filePreview.appendChild(wrapper);
+      showFilePreviews();
+
+      wrapper.querySelector(".delete-btn").addEventListener("click", () => {
+        filePreview.innerHTML = "";
+        fileInput.value = "";
+        if (!imagePreview.innerHTML.trim()) filePreviewsWrapper.style.display = "none";
+      });
+    });
+  }
+</script>
+</html>
