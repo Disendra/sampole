@@ -1,0 +1,699 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+  }
+  .avChamps-profile-page {
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 20px 20px 20px 7rem;
+  }
+  
+  
+  .avChamps-profile-page .avChamps-profile-zone {
+    margin-left: 0;
+    padding: 0;
+    transition: margin-left 0.3s ease-in-out;
+    min-height: 100vh;
+  }
+  
+  
+  
+  .avChamps-profile-page .profile-header {
+    padding: 20px 20px 60px 20px;
+  }
+  
+  .avChamps-profile-page .profile-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .avChamps-profile-page .profile-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 8px;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .avChamps-profile-page .profile-data-card-area{
+    min-height: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: none !important;
+  }
+  
+  .avChamps-profile-page .profile-details {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .avChamps-profile-page .info-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .avChamps-profile-page .profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid #2563eb;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .avChamps-profile-page .profile-info h5 {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #334155;
+  }
+  
+  .avChamps-profile-page .profile-info p {
+    margin-bottom: 0;
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+  
+  .avChamps-profile-page .profile-info-title {
+    font-weight: 600;
+    color: #2563eb;
+  }
+  
+  .avChamps-profile-page .section-divider {
+    width: 1px;
+    border-radius: 4px;
+    height: 64px;
+    margin: 0 16px;
+    background: #f3f4f6;
+  }
+  
+  .avChamps-profile-page .detail-item {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .avChamps-profile-page .detail-item-icon-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .avChamps-profile-page .detail-item-icon-label .icon {
+    font-size: 14px;
+    color: #4b5563;
+  }
+  
+  .avChamps-profile-page .detail-item p {
+    color: #6b7280;
+    font-weight: 600;
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .avChamps-profile-page .detail-item span {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .avChamps-profile-page .location-exp-item span {
+    font-weight: 600;
+  }
+  .avChamps-profile-page .profile-points{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .avChamps-profile-page .profile-points p{
+      font-size: 14px;
+      margin-bottom: 0;
+      font-weight: 600;
+      color: #6b7280;;
+  }
+  .avChamps-profile-page .profile-points span{
+      padding: 8px;
+      font-weight: 500;
+      background: #0d6efd;
+      border-radius: 4px;
+      color: white;
+  }
+  
+  .avChamps-profile-page .card {
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  
+  .avChamps-profile-page .card-header-custom {
+    background-color: transparent;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1f2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .avChamps-profile-page .card-body-custom {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    padding: 20px;
+  }
+  
+  
+  
+  .avChamps-profile-page .form-label-custom {
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  
+  .avChamps-profile-page .form-text-value {
+    color: #64748b;
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+  
+  .avChamps-profile-page .form-section {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 0.75rem;
+  }
+  
+  .avChamps-profile-page .form-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  .avChamps-profile-page .form-control,
+  .avChamps-profile-page .form-select {
+    border-radius: 8px;
+    box-shadow: none !important;
+    height: 44px;
+    font-size: 14px;
+  }
+  
+  .avChamps-profile-page .form-control:focus,
+  .avChamps-profile-page .form-select:focus {
+    border: 2px solid #0d6efd;
+  }
+  
+  .avChamps-profile-page .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .avChamps-profile-page .info-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .avChamps-profile-page .info-item span:first-child {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 2px;
+    font-size: 15px;
+  }
+  
+  .avChamps-profile-page .info-item span:last-child,
+  .avChamps-profile-page .education-item span:last-child {
+    color: #6b7280;
+    font-size: 14px;
+  }
+  
+  .avChamps-profile-page .edit-icon-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.2s;
+  }
+  
+  .avChamps-profile-page .edit-icon-btn:hover {
+    color: #2563eb;
+  }
+  
+  
+  
+  .avChamps-profile-page .education-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .avChamps-profile-page .education-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .avChamps-profile-page .education-item-top {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .avChamps-profile-page .education-item-top p{
+      font-size: 15px;
+      margin-bottom: 0;
+      font-weight: 600;
+      color: #374151;
+  }
+  
+  .avChamps-profile-page .education-duration {
+    white-space: nowrap;
+  }
+  
+  .avChamps-profile-page .experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .avChamps-profile-page .experience-card .job-title {
+    font-size: 15px;
+    color: #334155;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .avChamps-profile-page .experience-card .company {
+    color: #6b7280;
+    margin-bottom: 2px;
+    font-size: 14px;
+  }
+  
+  .avChamps-profile-page .experience-card .meta {
+    font-size: 14px !important;
+    color: #6b7280;
+    margin-bottom: 0;
+  }
+  
+  .avChamps-profile-page .experience-card .meta .date-range,
+  .avChamps-profile-page .experience-card .meta .separator {
+    font-weight: 600;
+  }
+  
+  .avChamps-profile-page .experience-card .separator {
+    margin: 0 2px;
+  }
+  
+  .avChamps-profile-page .certificates{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+  .avChamps-profile-page .certificate{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+  }
+  .avChamps-profile-page .certificate-title{
+       font-size: 15px;
+    color: #334155;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .avChamps-profile-page .certificate-org{
+      color: #334155;
+      margin-bottom: 0px;
+      font-size: 14px;
+  }
+  .avChamps-profile-page .certificate-dates,.avChamps-profile-page .certificate-id{
+      color: #6b7280;
+    font-size: 14px !important;
+    margin-bottom: 0;
+  }
+  .avChamps-profile-page .certificate-right{
+      border-bottom: 1px solid transparent;
+  }
+  .avChamps-profile-page .certificate-right .btn {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid transparent;
+    color: #2563eb;
+    font-size: 14px;
+    padding: 0;
+    white-space: nowrap;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  
+  .avChamps-profile-page .certificate-right .btn:hover {
+    color: #1d4ed8;
+    border-bottom: 1px solid #1d4ed8;
+  }
+  
+  .avChamps-profile-page .social-icons {
+    display: flex;
+    gap: 10px;
+    margin: 12px 0;
+  }
+  
+  .avChamps-profile-page .social-icons i {
+    font-size: 18px;
+    margin: 0 10px;
+    color: #333;
+    position: relative;
+  }
+  
+  .avChamps-profile-page .social-icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  
+  .avChamps-profile-page .social-icon-button:hover {
+    background-color: #f7f8f9;
+  }
+  
+  .avChamps-profile-page .social-icon-button svg {
+    height: 18px;
+    stroke-width: 2px;
+    color: #6b7280;
+  }
+  
+  .avChamps-profile-page .social-icons .bell {
+    position: relative;
+  }
+  
+  .avChamps-profile-page .social-icons .bell::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .avChamps-profile-page .modal-title .icon{
+      color: #2563eb;
+  }
+  .avChamps-profile-page .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: none;
+  }
+  
+  .avChamps-profile-page .modal-content .btn-outline-primary {
+    font-size: 14px;
+  }
+  
+  .avChamps-profile-page .modal-header {
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+  
+  .avChamps-profile-page .modal-body::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .avChamps-profile-page .modal-body::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 20px;
+  }
+  
+  .avChamps-profile-page .modal-body::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 20px;
+  }
+  
+  .avChamps-profile-page .modal-body::-webkit-scrollbar-thumb:hover {
+    background: #d1d5db;
+  }
+  
+  .avChamps-profile-page .modal-header-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .avChamps-profile-page .modal-footer .btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+  }
+  
+  .avChamps-profile-page .businessCardModalPopup .modal-content {
+    width: 450px !important;
+    margin: auto;
+  }
+  .avChamps-profile-page .businessCardModalPopup .modal-body {
+    width: 100% !important;
+    gap: 5px !important;
+    padding-top: 0 !important;
+  }
+  
+  
+  .avChamps-profile-page .socialLinksModalPopup .modal-content {
+    width: 450px !important;
+    margin: auto;
+  }
+  .avChamps-profile-page .socialLinksModalPopup .modal-body {
+    width: 100% !important;
+    gap: 5px !important;
+  }
+  .avChamps-profile-page .socialLinksModalPopup  .modal-title{
+    display: flex;
+    align-items: center;
+  }
+  .avChamps-profile-page .socialLinksModalPopup  .modal-title svg{
+    color: #003ee8;
+    margin-right: 7px;
+    height: 20px;
+  }
+  
+  
+  .avChamps-profile-page .btn-primary {
+    background-color: #2563eb;
+    padding: 8px 20px;
+  }
+  
+  .avChamps-profile-page .btn-primary:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .avChamps-profile-page .btn-outline-secondary {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #d1d5db !important;
+  }
+  
+  .avChamps-profile-page .btn-outline-secondary:hover {
+    background-color: rgb(238, 238, 238) !important;
+  }
+  
+  .avChamps-profile-page .points-btn {
+    background-color: #0d6efd;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  
+
+  
+  .avChamps-profile-page .close-btn {
+    color: white;
+  }
+  
+  .avChamps-profile-page .notify-circle {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    border: 3px solid white;
+    background: #eab308;
+    border-radius: 100%;
+  }
+  .avChamps-profile-page .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 20px auto 0;
+    font-size: 14px;
+  }
+  .avChamps-profile-page .credit-row {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: #f7f8f9;
+    padding: 12px 24px;
+    font-size: 12px;
+    color: #6b7280;
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+  
+  @media screen and (max-width: 1550px) {
+    .avChamps-profile-page .profile-card {
+      gap: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  @media screen and (max-width:1200px){
+      
+    .avChamps-profile-page .section-divider {
+      display: none;
+    }
+  }
+  @media (max-width: 999px) {
+
+    .avChamps-profile-page{
+      padding: 20px;
+    }
+  }
+  @media (max-width: 768px) {
+    .avChamps-profile-page{
+      padding: 0;
+    }  
+    .avChamps-profile-page .profile-data-section{
+      flex-direction: column;
+      gap: 8px;
+    }
+    .avChamps-profile-page .profile-details{
+      width: 100%;
+    }
+    .avChamps-profile-page .points-btn{
+      width: 100%;
+      height: 48px;
+      border-radius: 30px;
+    }
+    .avChamps-profile-page .verticle-divider{
+      display: none;
+    }
+    .avChamps-profile-page .avChamps-profile-zone {
+      margin-left: 0;
+      padding: 16px;
+    }
+  
+    .avChamps-profile-page .profile-img {
+      margin-bottom: 6px;
+    }
+  
+    .avChamps-profile-page .profile-card {
+      gap: 10px;
+    }
+  
+    .avChamps-profile-page .staff-details {
+      gap: 10px;
+    }
+  
+    .avChamps-profile-page .profile-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: 16px;
+    }
+    .avChamps-profile-page .profile-card-header .profile-img{
+      margin: auto;
+    }
+    .avChamps-profile-page .info-group{
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    .avChamps-profile-page .profile-card{
+      gap: 0;
+    }
+    .avChamps-profile-page .social-icons{
+      width: 100%;
+      justify-content: center;
+    }
+    .avChamps-profile-page .profile-info{
+      width: 100%;
+    }
+    .avChamps-profile-page .profile-img{
+      width: 100px;
+      height: 100px;
+    }
+    .avChamps-profile-page .profile-info h5{
+      text-align: center;
+    }
+    .avChamps-profile-page .profile-info span{
+      text-align: center;
+      justify-content: center;
+    }
+    .avChamps-profile-page .profile-details {
+      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .avChamps-profile-page .info-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .avChamps-profile-page .detail-item {
+      justify-content: center;
+    }
+  
+    .avChamps-profile-page .info-group:nth-child(1) {
+      margin-top: 12px;
+    }
+    .avChamps-profile-page .profile-points{
+      margin-top: 16px;
+      width: 100%;
+    }
+    .avChamps-profile-page .profile-header{
+      padding-bottom: 80px;
+    }
+  
+    
+    .avChamps-profile-page .businessCardModalPopup .modal-content,
+    .avChamps-profile-page .businessCardModalPopup .modal-body {
+      width: 100% !important;
+    }
+    .avChamps-profile-page .socialLinksModalPopup .modal-content,
+    .avChamps-profile-page .socialLinksModalPopup .modal-body {
+      width: 100% !important;
+    }
+    .avChamps-profile-page .certificate{
+      flex-direction: column;
+      gap: 4px;
+    }
+    .avChamps-profile-page .credit-row{
+      justify-content: center !important;
+    }
+  }
+  
